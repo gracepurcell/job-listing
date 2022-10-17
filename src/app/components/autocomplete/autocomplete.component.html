@@ -1,0 +1,11 @@
+<form class="width-full">
+  <mat-form-field  floatLabel="always" class="width-full">
+    <mat-label>{{label}}</mat-label>
+    <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions" [value]="option" (onSelectionChange)="selectOption(option)">
+        {{option.name_display}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

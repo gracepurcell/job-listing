@@ -1,0 +1,30 @@
+<div class="top">
+  <h1 class="head">Hello, welcome to my job search!</h1>
+
+</div>
+<div class="bottom">
+  <div class="job-search-field">
+    <app-autocomplete
+      [label]="'Job Title'"
+      (inputChange)="sendSearch($event)"
+      (makeJobSearch)="searchForRole($event)"
+      [filteredOptions]="ws.searchResults">
+    </app-autocomplete>
+
+  </div>
+
+  <ng-template [ngIf]="ws.jobResults && ws.jobResults.length > 0">
+
+    <div class="job-search-results">
+      <app-table [list]="ws.jobResults" (_selected)="selectedIndex($event)"></app-table>
+    </div>
+
+  </ng-template>
+
+  <div class="job-search-results">
+    <ng-template [ngIf]="ws.searchResults.length === 0 && ws.jobResults.length === 0">
+        Select a Job to search to find results
+    </ng-template>
+  </div>
+
+</div>

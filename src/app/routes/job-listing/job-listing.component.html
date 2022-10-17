@@ -1,0 +1,17 @@
+
+<div class="top padded">
+
+  <button mat-icon-button (click)="backToList()">
+    <mat-icon>keyboard_backspace</mat-icon> back home
+  </button>
+  <h1 class="head">{{ws.selectedJob.template_profession}}</h1>
+
+</div>
+<div class="bottom padded">
+  <div class="job-box">
+
+    <div *ngIf="ws.selectedJob">
+      <div [innerHTML]="ws.selectedJob.template"></div>
+    </div>
+  </div>
+</div>

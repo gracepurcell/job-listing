@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://www.jobs.ch/api",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
